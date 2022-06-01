@@ -8,7 +8,7 @@ require_once "connection.php";
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GPA Calculator</title>
+  <title>Buku Tamu</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400&family=PT+Sans&family=Source+Sans+Pro&display=swap');
@@ -43,31 +43,31 @@ require_once "connection.php";
     </div>
   </header>
 
-  <main class="flex flex-col lg:w-[90%] w-full max-w-[1600px] mt-32">
+  <main class="flex flex-col lg:w-[90%] w-full max-w-[1600px] mt-32 mb-60">
     <div class="header-table flex h-16 px-4 place-items-center border-y-secondary border-y-[1px] border-opacity-50">
-      <div class="font-PT font-bold text-base text-primary text-center w-[8%]">
+      <button onclick="sortTable(this.innerHTML.trim())" class="hover:opacity-70 font-PT font-bold text-base text-primary text-center w-[8%]">
         ID
-      </div>
-      <div class="font-PT font-bold text-base text-primary text-center w-[22%]">
+      </button>
+      <button onclick="sortTable(this.innerHTML.trim())" class="hover:opacity-70 font-PT font-bold text-base text-primary text-center w-[22%]">
         Nama
-      </div>
-      <div class="font-PT font-bold text-base text-primary text-center w-[20%]">
+      </button>
+      <button onclick="sortTable(this.innerHTML.trim())" class="hover:opacity-70 font-PT font-bold text-base text-primary text-center w-[20%]">
         Email
-      </div>
-      <div class="font-PT font-bold text-base text-primary text-center w-[15%]">
+      </button>
+      <button onclick="sortTable(this.innerHTML.trim())" class="hover:opacity-70 font-PT font-bold text-base text-primary text-center w-[15%]">
         Tanggal
-      </div>
-      <div class="font-PT font-bold text-base text-primary text-center w-[25%]">
+      </button>
+      <button onclick="sortTable(this.innerHTML.trim())" class="hover:opacity-70 font-PT font-bold text-base text-primary text-center w-[25%]">
         Komentar
-      </div>
-      <div class="font-PT font-bold text-base text-primary text-center w-[10%]">
+      </button>
+      <div class=" font-PT font-bold text-base text-primary text-center w-[10%]">
         Action
       </div>
     </div>
     <section id="table-body">
     </section>
 
-    <form id="form" onsubmit=" return false;" class="add-row mb-60 flex h-20 px-4 place-items-center border-b-secondary border-b-[1px] border-opacity-50 gap-x-4">
+    <form id="form" onsubmit="return false;" class="add-row  flex h-20 px-4 place-items-center border-b-secondary border-b-[1px] border-opacity-50 gap-x-4">
       <div class="font-Source text-base text-primary opacity-80 text-left w-[8%]">
         <div id="id" class="place-items-center h-[40px]  w-full text-primary rounded  px-4 leading-tight border-0 ring-1  ring-gray-300  bg-gray-200 flex place-content-center" type="text">
         </div>
@@ -86,12 +86,12 @@ require_once "connection.php";
       </div>
 
       <div class="font-Source text-base text-primary opacity-80 text-left w-[10%] flex place-content-between px-2">
-        <button onclick="addRow();" class="hover:bg-gray-100 w-12 h-12 duration-500 opacity-80 rounded-full flex place-content-center place-items-center" onclick="addRow();">
+        <button onclick="addRow(event);" class="check hover:bg-gray-200 w-12 h-12 duration-500 opacity-80 rounded-full flex place-content-center place-items-center">
           <svg fill="#424242" store="#424242" width="35" height="35" version="2.0">
             <use href="#check" />
           </svg>
         </button>
-        <button onclick="deleteRow(<?php echo $row['id']; ?>)" class="hover:bg-gray-100 w-12 h-12 duration-500 opacity-80 rounded-full flex place-content-center place-items-center">
+        <button onclick="clearInput(event)" class="cancel hover:bg-gray-200 w-12 h-12 duration-500 opacity-80 rounded-full flex place-content-center place-items-center">
           <svg fill="#424242" width="35" height="35" version="2.0">
             <use href="#cancel" />
           </svg>
