@@ -2,7 +2,7 @@
 require_once "connection.php";
 $column = isset($_GET['column']) ? $_GET['column'] : 'id';
 $direction = isset($_GET['direction']) ? $_GET['direction'] : 'ASC';
-$sqlData = "SELECT * FROM data_tamu";
+$sqlData = "SELECT * FROM data_tamu ORDER BY $column $direction";
 $lastId = $conn->query("SHOW TABLE STATUS LIKE 'data_tamu'")->fetch_assoc();
 $result =  $conn->query($sqlData);
 if ($result->num_rows > 0) {
