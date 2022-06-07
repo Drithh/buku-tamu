@@ -1,8 +1,8 @@
 <?php
 
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_HOST', 'us-cdbr-east-05.cleardb.net');
+define('DB_USER', 'bc0d2641bc9fd0');
+define('DB_PASS', '2574b9df');
 define('DB_NAME', 'buku_tamu');
 
 $conn = new mysqli(DB_HOST, DB_USER, DB_PASS);
