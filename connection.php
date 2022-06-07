@@ -14,20 +14,20 @@ if ($conn->connect_error) {
 $query = 'SHOW DATABASES LIKE "' . DB_NAME . '"';
 if ($conn->query($query)->num_rows === 1) {
     $conn->select_db(DB_NAME);
-    $sqlTable = "CREATE TABLE " . DB_NAME . ".data_tamu (
-        id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-        nama VARCHAR(50) NOT NULL,
-        email VARCHAR(50),
-        tanggal DATETIME NOT NULL,
-        komentar TEXT NOT NULL,
-        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-    )";
+    // $sqlTable = "CREATE TABLE " . DB_NAME . ".data_tamu (
+    //     id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+    //     nama VARCHAR(50) NOT NULL,
+    //     email VARCHAR(50),
+    //     tanggal DATETIME NOT NULL,
+    //     komentar TEXT NOT NULL,
+    //     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    // )";
 
 
-    if ($conn->query($sqlTable) === TRUE) {
-        echo "<h2>Table berhasil dibuat</h2><br>";
-        echo '<button><a style="text-decoration: none; color=black" href="index.php">Kembali Ke Halaman Utama</a></button>';
-    }
+    // if ($conn->query($sqlTable) === TRUE) {
+    //     echo "<h2>Table berhasil dibuat</h2><br>";
+    //     echo '<button><a style="text-decoration: none; color=black" href="index.php">Kembali Ke Halaman Utama</a></button>';
+    // }
     if ($conn->connect_errno) {
         var_dump($conn);
         echo "Gagal Connect ke Database : (" . $conn->connect_errno . ") " . $conn->connect_error;
